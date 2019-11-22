@@ -1,0 +1,37 @@
+create table cliente (
+	codcli INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR(35),
+	bonus INT,
+	perfil VARCHAR(1),
+	STATUS VARCHAR(1)  
+);
+
+create table localidade (
+	codlocal INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR(35),
+	endereco VARCHAR(80),
+	telefone VARCHAR(14)  
+);
+
+create table produto (
+	codprod INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	descricao VARCHAR(35),
+        codlocal INT,
+	qtd_estoque INT,
+	preco_unitario FLOAT,
+        FOREIGN KEY (codlocal) REFERENCES localidade (codlocal) ON DELETE CASCADE
+);
+
+create table venda (
+        fk_codcli INT,
+	fk_codprod INT,
+	fk_codlocal INT,
+	qtd_venda INT,
+	valor_total FLOAT,
+	data_venda DATE,
+        PRIMARY KEY (fk_codcli, fk_codprod, fk_codlocal),
+	FOREIGN KEY (fk_codcli) REFERENCES cliente (codcli) ON DELETE CASCADE,
+	FOREIGN KEY (fk_codprod) REFERENCES produto (codprod) ON DELETE CASCADE,
+	FOREIGN KEY (fk_codlocal) REFERENCES localidade (codlocal) ON DELETE CASCADE
+);
+
