@@ -35,3 +35,8 @@ create table venda (
 	FOREIGN KEY (fk_codlocal) REFERENCES localidade (codlocal) ON DELETE CASCADE
 );
 
+create table vendas (
+    id INT NOT NULL UNIQUE,
+    nome_produto VARCHAR(40) NOT NULL,
+    quantidade INT NOT NULL
+);

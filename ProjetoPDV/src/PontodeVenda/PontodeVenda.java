@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package projetoescola;
+package PontodeVenda;
 
 import apresentacao.JFrameAluno;
 
@@ -11,7 +11,7 @@ import apresentacao.JFrameAluno;
  *
  * @author bruno.smedeiros
  */
-public class ProjetoEscola {
+public class PontodeVenda {
 
     /**
      * @param args the command line arguments
@@ -19,7 +19,7 @@ public class ProjetoEscola {
     public static void main(String[] args) {
         // TODO code application logic 
         JFrameAluno jFrameAluno = new JFrameAluno(); //Cria o objeto Janela
-        jFrameAluno.setTitle("Cadastro de Alunos"); //Define o título na Janela
+        jFrameAluno.setTitle("PDV - ponto de venda"); //Define o título na Janela
         jFrameAluno.setLocationRelativeTo(null); //Coloca a janela no centro da tela
         jFrameAluno.setVisible(true); //Mostra a janela
     }
